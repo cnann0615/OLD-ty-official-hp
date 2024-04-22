@@ -19,7 +19,7 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-xl mb-4">"Perseverance is the key to success"</p>
+          <p className="text-xl mb-4">Perseverance is the key to success</p>
         </div>
 
         <div className="my-10">
