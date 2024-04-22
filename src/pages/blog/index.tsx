@@ -1,7 +1,7 @@
 import React from "react";
 import { client } from "../../../libs/client";
-import Link from "next/dist/client/link";
 import Layout from "@/components/layouts/Layout";
+import Link from "next/link";
 
 //SSG
 export const getStaticProps = async () => {
