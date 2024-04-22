@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 import { client } from "../../../libs/client";
 import Link from "next/dist/client/link";
+import Layout from "@/components/layouts/Layout";
 
 //SSG
-export const getStaticProps = async() => {
+export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
   return {
     props: {
@@ -12,19 +13,16 @@ export const getStaticProps = async() => {
   };
 };
 
-
-const blog = ({ blog }: any) => {
+export default function blog ({ blog }: any) {
   return (
-    <div>
-      {blog.map((blog: any) => (
-        <li key={blog.id}>
-          <Link href={`blog/${blog.id}`}>
-            {blog.title}
-          </Link>
-        </li>
-      ))}
-    </div>
+    <Layout>
+      <div>
+        {blog.map((blog: any) => (
+          <li key={blog.id}>
+            <Link href={`blog/${blog.id}`}>{blog.title}</Link>
+          </li>
+        ))}
+      </div>
+    </Layout>
   );
-}
-
-export default blog
+};

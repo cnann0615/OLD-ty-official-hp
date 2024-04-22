@@ -1,9 +1,11 @@
-import React from 'react'
+import Layout from "@/components/layouts/Layout";
+import React from "react";
 
-function profile() {
+export default function profile() {
   return (
-    <div>profile</div>
-  )
+    <Layout>
+      <div>profile</div>
+    </Layout>
+  );
 }
 
-export default profile

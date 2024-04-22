@@ -1,3 +1,4 @@
+import Layout from "@/components/layouts/Layout";
 import { client } from "../../../libs/client";
 
 // SSG
@@ -18,15 +19,17 @@ export const getStaticPaths = async () => {
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export default function BlogId({ blog }: any) {
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
-    </main>
+    <Layout>
+      <main>
+        <h1>{blog.title}</h1>
+        <p>{blog.date}</p>
+        <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
+      </main>
+    </Layout>
   );
 }

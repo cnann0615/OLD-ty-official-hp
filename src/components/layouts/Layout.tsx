@@ -8,26 +8,28 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+export default function Layout({ children }: LayoutProps) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       {/* Header */}
-      <div className="bg-stone-900 text-white">
-        <header className="p-5 bg-stone-800">
+      <div className="bg-white text-gray-700">
+        <header className="p-5 bg-blue-800  text-white">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-xl font-bold text-red-500">Athlete Name</h1>
+            <Link href="/" className="white">
+              <h1 className="text-xl font-bold font-style: italic">Ohtani Shohei</h1>
+            </Link>
             <div className="hidden md:flex space-x-4">
-              <Link href="/" className="hover:underline text-red-500">
+              <Link href="/" className="hover:underline white">
                 Top
               </Link>
-              <Link href="/profile" className="hover:underline text-red-500">
+              <Link href="/profile" className="hover:underline white">
                 Profile
               </Link>
-              <Link href="/blog" className="hover:underline text-red-500">
+              <Link href="/blog" className="hover:underline white">
                 Blog
               </Link>
-              <Link href="/contact" className="hover:underline text-red-500">
+              <Link href="/contact" className="hover:underline white">
                 Contact
               </Link>
             </div>
@@ -38,25 +40,25 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="absolute top-16 right-5 bg-gray-900 rounded shadow-lg py-2 w-40">
                 <Link
                   href="/"
-                  className="block px-4 py-2 hover:bg-gray-800 text-red-500"
+                  className="block px-4 py-2 hover:bg-gray-800 white"
                 >
                   Top
                 </Link>
                 <Link
                   href="/profile"
-                  className="block px-4 py-2 hover:bg-gray-800 text-red-500"
+                  className="block px-4 py-2 hover:bg-gray-800 white"
                 >
                   Profile
                 </Link>
                 <Link
                   href="/blog"
-                  className="block px-4 py-2 hover:bg-gray-800 text-red-500"
+                  className="block px-4 py-2 hover:bg-gray-800 white"
                 >
                   Blog
                 </Link>
                 <Link
                   href="/contact"
-                  className="block px-4 py-2 hover:bg-gray-800 text-red-500"
+                  className="block px-4 py-2 hover:bg-gray-800 white"
                 >
                   Contact
                 </Link>
@@ -66,45 +68,62 @@ const Layout = ({ children }: LayoutProps) => {
         </header>
         {children}
         {/* Footer */}
-        <footer className="p-5 bg-stone-800">
+        <footer className="p-5 bg-blue-800 text-white">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Link href="/" className="block hover:underline text-red-500">
-                  Top
-                </Link>
-                <Link
-                  href="/profile"
-                  className="block hover:underline text-red-500"
-                >
-                  Profile
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block hover:underline text-red-500"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block hover:underline text-red-500"
-                >
-                  Contact
-                </Link>
+                <h3 className="text-lg">MENU</h3>
+                <li>
+                  <Link href="/" className="inline hover:text-blue-300">
+                    Top
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/profile" className="inline hover:text-blue-300">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="inline hover:text-blue-300">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="inline hover:text-blue-300">
+                    Contact
+                  </Link>
+                </li>
               </div>
               <div className="space-y-2">
-                <a
-                  href="https://instagram.com"
-                  className="block hover:underline text-red-500"
-                >
-                  Instagram
-                </a>
-                <a
-                  href="https://twitter.com"
-                  className="block hover:underline text-red-500"
-                >
-                  Twitter
-                </a>
+                <h3 className="text-lg">FOLLOW US</h3>
+                <div className="flex gap-4">
+                  <a
+                    href="https://instagram.com"
+                    className="hover:text-blue-300"
+                  >
+                    <Image
+                      src="/images/icon/instagram.png"
+                      alt="Instagram Logo"
+                      width={30}
+                      height={30}
+                      layout="fixed"
+                    />
+                  </a>
+                  <a href="https://twitter.com" className="hover:text-blue-300">
+                    <Image
+                      src="/images/icon/x.png"
+                      alt="Twitter Logo"
+                      width={30}
+                      height={30}
+                      layout="fixed"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg">CONTACT INFO</h3>
+                <p>Email: contact@example.com</p>
+                <p>Phone: (123) 456-7890</p>
               </div>
             </div>
           </div>
@@ -112,6 +131,4 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
     </>
   );
-};
-
-export default Layout;
+}
