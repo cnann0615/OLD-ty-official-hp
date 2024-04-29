@@ -1,5 +1,7 @@
 import Layout from "@/components/layouts/Layout";
 import Image from "next/image";
+import { Image as DreiImage} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { client } from "../../libs/client";
@@ -27,6 +29,14 @@ const formatDate = (dateString: string) => {
   }).format(new Date(dateString));
 };
 
+const Images = () => {
+  return (
+    <group>
+      <DreiImage url="/images/top/img1.jpeg"></DreiImage>
+    </group>
+  )
+}
+
 export default function Home({ blog }: any) {
   return (
     <Layout>
@@ -47,7 +57,10 @@ export default function Home({ blog }: any) {
         {/* 紹介 */}
         <div>
         <h1 className="text-2xl text-violet-950 font-bold mb-4">Perseverance is the key to success</h1>
-
+        <Canvas>
+        <Images />
+        </Canvas>
+         
         </div>
 
 
