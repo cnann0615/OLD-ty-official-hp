@@ -1,7 +1,10 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
 import { client } from "../../../libs/client";
 import Layout from "@/components/layouts/Layout";
-import Link from "next/link";
+import { formatDate } from "..";
 
 //SSG
 export const getStaticProps = async () => {
@@ -13,14 +16,25 @@ export const getStaticProps = async () => {
   };
 };
 
+
 export default function blog ({ blog }: any) {
   return (
     <Layout>
       <div>
         {blog.map((blog: any) => (
-          <li key={blog.id}>
-            <Link href={`blog/${blog.id}`}>{blog.title}</Link>
-          </li>
+          <article key={blog.id}>
+            <section>
+            <Link href={`blog/${blog.id}`}>
+                <div>
+                  <img src={blog.photo.url} alt={""}></img>
+                </div>
+                <div>
+                  <h3>{blog.title}</h3>
+                </div>
+                <div>{formatDate(blog.publishedAt)}</div>
+                </Link>
+            </section>
+          </article>
         ))}
       </div>
     </Layout>

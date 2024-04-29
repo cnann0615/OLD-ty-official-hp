@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
 };
 
 // 日付をフォーマットするヘルパー関数
-const formatDate = (dateString: string) => {
+export const formatDate = (dateString: string) => {
   return new Intl.DateTimeFormat("ja-JP", {
     year: "numeric",
     month: "numeric",
@@ -40,7 +40,7 @@ export default function Home({ blog }: any) {
               alt="Athlete"
               layout="responsive"
               width={500}
-              height={333}
+              height={270}
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Home({ blog }: any) {
                   key={blog.id}
                 >
                   <Link href={`blog/${blog.id}`}>
-                    <div className="text-xs ">{formatDate(blog.date)}</div>
+                    <div className="text-xs ">{formatDate(blog.publishedAt)}</div>
                     <div className="font-bold">{blog.title}</div>
                   </Link>
                 </li>
