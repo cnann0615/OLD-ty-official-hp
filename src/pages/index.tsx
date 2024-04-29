@@ -1,7 +1,6 @@
 import Layout from "@/components/layouts/Layout";
 import Image from "next/image";
-import { Image as DreiImage} from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+
 
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { client } from "../../libs/client";
@@ -29,19 +28,11 @@ const formatDate = (dateString: string) => {
   }).format(new Date(dateString));
 };
 
-const Images = () => {
-  return (
-    <group>
-      <DreiImage url="/images/top/img1.jpeg"></DreiImage>
-    </group>
-  )
-}
-
 export default function Home({ blog }: any) {
   return (
     <Layout>
       {/* メイン */}
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto px-4 h-auto">
         <div className="text-center">
           <div className="relative w-full flex justify-center items-center mb-6">
             <Image
@@ -56,19 +47,19 @@ export default function Home({ blog }: any) {
 
         {/* 紹介 */}
         <div>
-        <h1 className="text-2xl text-violet-950 font-bold mb-4">Perseverance is the key to success</h1>
-        <Canvas>
-        <Images />
-        </Canvas>
-         
-        </div>
+          <h1 className="text-2xl text-violet-950 font-bold mb-4">
+            Perseverance is the key to success
+          </h1>
 
+        </div>
 
         {/* ブログとX */}
 
         <div className="my-10 flex flex-col md:flex-row justify-center items-start gap-4">
           <div className="w-full md:w-1/2 p-4">
-            <h3 className="text-2xl text-violet-950 font-bold mb-4">Recent Blog Posts</h3>
+            <h3 className="text-2xl text-violet-950 font-bold mb-4">
+              Recent Blog Posts
+            </h3>
             <div className="space-y-4">
               {blog.slice(0, 5).map((blog: any) => (
                 <li

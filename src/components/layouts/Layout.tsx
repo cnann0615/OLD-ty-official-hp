@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       {/* Header */}
-      <div className="bg-white text-gray-700">
+      <div className="bg-gray-100 text-gray-700">
         <header className="p-5 bg-violet-900  text-white">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="white">
