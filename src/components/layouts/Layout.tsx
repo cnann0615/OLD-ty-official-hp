@@ -14,10 +14,10 @@ export default function Layout({ children }: LayoutProps) {
     <>
       {/* Header */}
       <div className="bg-white text-gray-700">
-        <header className="p-5 bg-blue-800  text-white">
+        <header className="p-5 bg-violet-900  text-white">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="white">
-              <h1 className="text-xl font-bold font-style: italic">Ohtani Shohei</h1>
+              <h1 className="text-xl font-bold font-style: italic">Tetsuya Yamada</h1>
             </Link>
             <div className="hidden md:flex space-x-4">
               <Link href="/" className="hover:underline white">
@@ -68,28 +68,28 @@ export default function Layout({ children }: LayoutProps) {
         </header>
         {children}
         {/* Footer */}
-        <footer className="p-5 bg-blue-800 text-white">
+        <footer className="p-5 bg-violet-900 text-white">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <h3 className="text-lg">MENU</h3>
                 <li>
-                  <Link href="/" className="inline hover:text-blue-300">
+                  <Link href="/" className="inline hover:text-violet-300">
                     Top
                   </Link>
                 </li>
                 <li>
-                  <Link href="/profile" className="inline hover:text-blue-300">
+                  <Link href="/profile" className="inline hover:text-violet-300">
                     Profile
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="inline hover:text-blue-300">
+                  <Link href="/blog" className="inline hover:text-violet-300">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="inline hover:text-blue-300">
+                  <Link href="/contact" className="inline hover:text-violet-300">
                     Contact
                   </Link>
                 </li>
@@ -98,8 +98,8 @@ export default function Layout({ children }: LayoutProps) {
                 <h3 className="text-lg">FOLLOW US</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://instagram.com"
-                    className="hover:text-blue-300"
+                    href="https://www.instagram.com/hamiltonsrbbengals?igsh=MTI5ZXJiZXZtOXM1ZA=="
+                    className="hover:text-violet-900"
                   >
                     <Image
                       src="/images/icon/instagram.png"
@@ -109,7 +109,7 @@ export default function Layout({ children }: LayoutProps) {
                       layout="fixed"
                     />
                   </a>
-                  <a href="https://twitter.com" className="hover:text-blue-300">
+                  <a href="https://twitter.com" className="hover:text-violet-300">
                     <Image
                       src="/images/icon/x.png"
                       alt="Twitter Logo"
