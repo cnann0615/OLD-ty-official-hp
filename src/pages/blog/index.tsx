@@ -20,22 +20,22 @@ export const getStaticProps = async () => {
 export default function blog ({ blog }: any) {
   return (
     <Layout>
-      <div>
-        {blog.map((blog: any) => (
-          <article key={blog.id}>
-            <section>
-            <Link href={`blog/${blog.id}`}>
-                <div>
-                  <img src={blog.photo.url} alt={""}></img>
+      <div className="container mx-auto p-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blog.map((blog: any) => (
+            <article key={blog.id} className="bg-white shadow-lg rounded-lg overflow-hidden h-auto">
+              <Link href={`blog/${blog.id}`}>
+                <div className="relative">
+                  <img src={blog.photo.url} alt={blog.title} className="w-full h-64 object-cover"/>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold">{blog.title}</h3>
+                    <p className="text-sm text-gray-600">{formatDate(blog.publishedAt)}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3>{blog.title}</h3>
-                </div>
-                <div>{formatDate(blog.publishedAt)}</div>
-                </Link>
-            </section>
-          </article>
-        ))}
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </Layout>
   );

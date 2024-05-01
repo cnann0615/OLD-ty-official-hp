@@ -36,7 +36,7 @@ export default function Home({ blog }: any) {
         <div className="text-center">
           <div className="relative w-full flex justify-center items-center mb-6">
             <Image
-              src="/images/top/img2.jpeg"
+              src="/images/top/img17.jpg"
               alt="Athlete"
               layout="responsive"
               width={500}
@@ -61,14 +61,14 @@ export default function Home({ blog }: any) {
               Recent Blog Posts
             </h3>
             <div className="space-y-4">
-              {blog.slice(0, 5).map((blog: any) => (
+              {blog.slice(0, 6).map((blog: any) => (
                 <li
-                  className="bg-gray-50 h-14 flex items-center pl-4 list-none"
+                  className="bg-gray-50 h-20 flex items-center pl-4 list-none"
                   key={blog.id}
                 >
                   <Link href={`blog/${blog.id}`}>
-                    <div className="text-xs ">{formatDate(blog.publishedAt)}</div>
-                    <div className="font-bold">{blog.title}</div>
+                    <div className=" text-sm ">{formatDate(blog.publishedAt)}</div>
+                    <div className=" text-lg font-bold">{blog.title}</div>
                   </Link>
                 </li>
               ))}
@@ -78,7 +78,7 @@ export default function Home({ blog }: any) {
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="DodgersNation"
-              options={{ height: 400 }}
+              options={{ height: 620 }}
             />
           </div>
         </div>
