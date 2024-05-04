@@ -1,12 +1,16 @@
+import dynamic from 'next/dynamic';
 import Layout from "@/components/layouts/Layout";
 import Image from "next/image";
-import { FadeIn, SlideInLeft, SlideInRight } from "@/components/FadeIn";
-
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { client } from "../../libs/client";
 import Link from "next/link";
 
-//SSG
+// アニメーションコンポーネントをクライアントサイドでのみ読み込む
+const FadeIn = dynamic(() => import('@/components/FadeIn').then(mod => mod.FadeIn), { ssr: false });
+const SlideInLeft = dynamic(() => import('@/components/FadeIn').then(mod => mod.SlideInLeft), { ssr: false });
+const SlideInRight = dynamic(() => import('@/components/FadeIn').then(mod => mod.SlideInRight), { ssr: false });
+
+// SSG
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
   return {
@@ -15,6 +19,7 @@ export const getStaticProps = async () => {
     },
   };
 };
+
 // 日付をフォーマットするヘルパー関数
 export const formatDate = (dateString: string) => {
   return new Intl.DateTimeFormat("ja-JP", {
@@ -33,10 +38,12 @@ export default function Home({ blog }: any) {
       {/* メイン */}
       <main className="container mx-auto px-4 h-auto">
         <div className="relative w-full justify-center items-center mb-6">
-          <img
+        <Image
             src="/images/top/img6.jpeg"
             alt="Athlete"
-            className="w-full h-auto"
+            layout="responsive"
+            width={500}
+            height={240}
           />
           <div className="absolute bottom-0 w-full flex items-end p-4">
             <div className="animate-slide-in-left">
@@ -59,11 +66,13 @@ export default function Home({ blog }: any) {
             <div className="flex mb-4">
               <div className="w-1/2">
                 <SlideInLeft>
-                  <img
-                    src="/images/top/img1.jpeg"
-                    alt="Athlete"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                <Image
+                  src="/images/top/img1.jpeg"
+                  alt="Athlete"
+                  layout="responsive"
+                  width={250}
+                  height={120}
+                ></Image>
                 </SlideInLeft>
               </div>
               <div className="w-1/2 pl-4">
@@ -83,22 +92,26 @@ export default function Home({ blog }: any) {
               </div>
               <div className="w-1/2">
                 <SlideInLeft>
-                  <img
-                    src="/images/top/img2.jpeg"
-                    alt="Athlete"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                <Image
+                  src="/images/top/img2.jpeg"
+                  alt="Athlete"
+                  layout="responsive"
+                  width={250}
+                  height={120}
+                ></Image>
                 </SlideInLeft>
               </div>
             </div>
             <div className="flex mb-4">
               <div className="w-1/2">
                 <SlideInLeft>
-                  <img
-                    src="/images/top/img3.jpeg"
-                    alt="Athlete"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                <Image
+                  src="/images/top/img3.jpeg"
+                  alt="Athlete"
+                  layout="responsive"
+                  width={250}
+                  height={120}
+                ></Image>
                 </SlideInLeft>
               </div>
               <div className="w-1/2 pl-4">
