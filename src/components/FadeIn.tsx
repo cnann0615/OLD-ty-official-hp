@@ -5,7 +5,7 @@ export const TimeFadeIn = ({ children }: any) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // コンポーネントがマウントされた後、3秒後に isVisible を true に設定
+        // コンポーネントがマウントされた後、3秒後に isVisibleをtrue に設定
         const timer = setTimeout(() => {
             setIsVisible(true);
         }, 1000); // 1000ミリ秒 = 1秒
