@@ -1,32 +1,34 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
-export const TimeFadeIn = ({ children }: any) => {
+export const TimeFadeIn = ({ children, delay }: { children: React.ReactNode, delay?: number }) => {
     const [inView, setInView] = useState(false);
 
     useEffect(() => {
-        // コンポーネントがマウントされた後、3秒後に isVisibleをtrue に設定
+        // コンポーネントがマウントされた後、delayミリ秒後に inView を true に設定
         const timer = setTimeout(() => {
             setInView(true);
-        }, 500); // 500ミリ秒 = 0.5秒
+        }, delay);
+
+        console.log(delay);
 
         // コンポーネントがアンマウントされた時にタイマーをクリア
         return () => clearTimeout(timer);
-    }, []);
+    }, [delay]);  // delay を依存配列に加える
 
     return (
         <div
-            className={`${inView ? "opacity-100" : "opacity-0 translate-x-[-50%]"} duration-[1s]`}
+            className={`${inView ? "opacity-100" : "opacity-0 translate-x-[-50%]"} transition-opacity duration-[1s]`}
         >
             {children}
         </div>
-    )
+    );
 }
 
 export const FadeIn = ({ children }: any) => {
     const { ref, inView } = useInView({
         // オプション
-        rootMargin: '-300px', // ref要素が現れてから300px過ぎたら
+        rootMargin: '-10px', // ref要素が現れてから50px過ぎたら
         triggerOnce: true, // 最初の一度だけ実行
     });
 
@@ -43,7 +45,7 @@ export const FadeIn = ({ children }: any) => {
 export const SlideInRight = ({ children }: any) => {
     const { ref, inView } = useInView({
         // オプション
-        rootMargin: '-350px', // ref要素が現れてから350px過ぎたら
+        rootMargin: '-100px', // ref要素が現れてから50px過ぎたら
         triggerOnce: true, // 最初の一度だけ実行
     });
 
@@ -61,7 +63,7 @@ export const SlideInRight = ({ children }: any) => {
 export const SlideInLeft = ({ children }: any) => {
     const { ref, inView } = useInView({
         // オプション
-        rootMargin: '-350px', // ref要素が現れてから350px過ぎたら
+        rootMargin: '-100px', // ref要素が現れてから50px過ぎたら
         triggerOnce: true, // 最初の一度だけ実行
     });
 
