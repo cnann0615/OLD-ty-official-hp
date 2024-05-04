@@ -13,23 +13,23 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       {/* Header */}
-      <div className="bg-gray-300 text-gray-700">
-        <header className="p-5 bg-violet-900  text-white">
+      <div className="bg-[url('/images/bg/bg.jpeg')] text-white">
+        <header className="p-5 text-black">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="white">
-              <h1 className="text-xl font-bold font-style: italic">Tetsuya Yamada</h1>
+              <h1 className=" text-6xl font-bold font-style: italic hover:underline underline-offset-8 decoration-yellow-500 ">Tetsuya Yamada</h1>
             </Link>
-            <div className="hidden md:flex space-x-4">
-              <Link href="/" className="hover:underline white text-lg">
+            <div className="hidden md:flex space-x-8">
+              <Link href="/" className="hover:underline underline-offset-8 decoration-yellow-500  white text-3xl font-bold ">
                 Top
               </Link>
-              <Link href="/profile" className="hover:underline white text-lg">
+              <Link href="/profile" className="hover:underline underline-offset-8 decoration-yellow-500  white text-3xl font-bold ">
                 Profile
               </Link>
-              <Link href="/blog" className="hover:underline white text-lg">
+              <Link href="/blog" className="hover:underline underline-offset-8 decoration-yellow-500  white text-3xl font-bold ">
                 Blog
               </Link>
-              <Link href="/contact" className="hover:underline white text-lg">
+              <Link href="/contact" className="hover:underline underline-offset-8 decoration-yellow-500  white text-3xl font-bold ">
                 Contact
               </Link>
             </div>
