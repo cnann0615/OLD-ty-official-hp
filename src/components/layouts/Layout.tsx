@@ -13,23 +13,23 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       {/* Header */}
-      <div className="bg-gray-100 text-gray-700">
+      <div className="bg-gray-300 text-gray-700">
         <header className="p-5 bg-violet-900  text-white">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="white">
               <h1 className="text-xl font-bold font-style: italic">Tetsuya Yamada</h1>
             </Link>
             <div className="hidden md:flex space-x-4">
-              <Link href="/" className="hover:underline white">
+              <Link href="/" className="hover:underline white text-lg">
                 Top
               </Link>
-              <Link href="/profile" className="hover:underline white">
+              <Link href="/profile" className="hover:underline white text-lg">
                 Profile
               </Link>
-              <Link href="/blog" className="hover:underline white">
+              <Link href="/blog" className="hover:underline white text-lg">
                 Blog
               </Link>
-              <Link href="/contact" className="hover:underline white">
+              <Link href="/contact" className="hover:underline white text-lg">
                 Contact
               </Link>
             </div>
@@ -106,7 +106,6 @@ export default function Layout({ children }: LayoutProps) {
                       alt="Instagram Logo"
                       width={30}
                       height={30}
-                      layout="fixed"
                     />
                   </a>
                   <a href="https://twitter.com" className="hover:text-violet-300">
@@ -115,7 +114,6 @@ export default function Layout({ children }: LayoutProps) {
                       alt="Twitter Logo"
                       width={30}
                       height={30}
-                      layout="fixed"
                     />
                   </a>
                 </div>
