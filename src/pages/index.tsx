@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import Layout from "@/components/layouts/Layout";
 import Image from "next/image";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
@@ -6,9 +6,22 @@ import { client } from "../../libs/client";
 import Link from "next/link";
 
 // アニメーションコンポーネントをクライアントサイドでのみ読み込む
-const FadeIn = dynamic(() => import('@/components/FadeIn').then(mod => mod.FadeIn), { ssr: false });
-const SlideInLeft = dynamic(() => import('@/components/FadeIn').then(mod => mod.SlideInLeft), { ssr: false });
-const SlideInRight = dynamic(() => import('@/components/FadeIn').then(mod => mod.SlideInRight), { ssr: false });
+const TimeFadeIn = dynamic(
+  () => import("@/components/FadeIn").then((mod) => mod.TimeFadeIn),
+  { ssr: false }
+);
+const FadeIn = dynamic(
+  () => import("@/components/FadeIn").then((mod) => mod.FadeIn),
+  { ssr: false }
+);
+const SlideInLeft = dynamic(
+  () => import("@/components/FadeIn").then((mod) => mod.SlideInLeft),
+  { ssr: false }
+);
+const SlideInRight = dynamic(
+  () => import("@/components/FadeIn").then((mod) => mod.SlideInRight),
+  { ssr: false }
+);
 
 // SSG
 export const getStaticProps = async () => {
@@ -38,7 +51,7 @@ export default function Home({ blog }: any) {
       {/* メイン */}
       <main className="container mx-auto px-4 h-auto">
         <div className="relative w-full justify-center items-center mb-6">
-        <Image
+          <Image
             src="/images/top/img6.jpeg"
             alt="Athlete"
             layout="responsive"
@@ -46,14 +59,16 @@ export default function Home({ blog }: any) {
             height={240}
           />
           <div className="absolute bottom-0 w-full flex items-end p-4">
-            <div className="animate-slide-in-left">
-              <h1 className="text-white text-4xl lg:text-8xl font-bold underline italic">
-                夢を持ち、
-              </h1>
-              <h1 className="text-white text-4xl lg:text-8xl font-bold underline italic">
-                実現に向け一歩踏み出す勇気
-              </h1>
-            </div>
+            <TimeFadeIn>
+              <div className="animate-slide-in-left">
+                <h1 className="text-white text-4xl lg:text-8xl font-bold underline italic">
+                  夢を持ち、
+                </h1>
+                <h1 className="text-white text-4xl lg:text-8xl font-bold underline italic">
+                  実現に向け一歩踏み出す勇気
+                </h1>
+              </div>
+            </TimeFadeIn>
           </div>
         </div>
 
@@ -66,13 +81,13 @@ export default function Home({ blog }: any) {
             <div className="flex mb-4">
               <div className="w-1/2">
                 <SlideInLeft>
-                <Image
-                  src="/images/top/img1.jpeg"
-                  alt="Athlete"
-                  layout="responsive"
-                  width={250}
-                  height={120}
-                ></Image>
+                  <Image
+                    src="/images/top/img1.jpeg"
+                    alt="Athlete"
+                    layout="responsive"
+                    width={250}
+                    height={120}
+                  ></Image>
                 </SlideInLeft>
               </div>
               <div className="w-1/2 pl-4">
@@ -92,26 +107,26 @@ export default function Home({ blog }: any) {
               </div>
               <div className="w-1/2">
                 <SlideInLeft>
-                <Image
-                  src="/images/top/img2.jpeg"
-                  alt="Athlete"
-                  layout="responsive"
-                  width={250}
-                  height={120}
-                ></Image>
+                  <Image
+                    src="/images/top/img2.jpeg"
+                    alt="Athlete"
+                    layout="responsive"
+                    width={250}
+                    height={120}
+                  ></Image>
                 </SlideInLeft>
               </div>
             </div>
             <div className="flex mb-4">
               <div className="w-1/2">
                 <SlideInLeft>
-                <Image
-                  src="/images/top/img3.jpeg"
-                  alt="Athlete"
-                  layout="responsive"
-                  width={250}
-                  height={120}
-                ></Image>
+                  <Image
+                    src="/images/top/img3.jpeg"
+                    alt="Athlete"
+                    layout="responsive"
+                    width={250}
+                    height={120}
+                  ></Image>
                 </SlideInLeft>
               </div>
               <div className="w-1/2 pl-4">
