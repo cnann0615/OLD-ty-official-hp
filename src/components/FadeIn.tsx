@@ -2,12 +2,12 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
 export const TimeFadeIn = ({ children }: any) => {
-    const [isVisible, setIsVisible] = useState(false);
+    const [inView, setInView] = useState(false);
 
     useEffect(() => {
         // コンポーネントがマウントされた後、3秒後に isVisibleをtrue に設定
         const timer = setTimeout(() => {
-            setIsVisible(true);
+            setInView(true);
         }, 1000); // 1000ミリ秒 = 1秒
 
         // コンポーネントがアンマウントされた時にタイマーをクリア
@@ -16,7 +16,7 @@ export const TimeFadeIn = ({ children }: any) => {
 
     return (
         <div
-            className={`${isVisible ? "opacity-100" : "opacity-0 translate-x-[50%]"} transition-opacity duration-[1s]`}
+            className={`${inView ? "opacity-100" : "opacity-0 translate-x-[-50%]"} duration-[1s]`}
         >
             {children}
         </div>
