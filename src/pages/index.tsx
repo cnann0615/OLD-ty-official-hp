@@ -172,7 +172,7 @@ export default function Home({ blog }: any) {
                     テキスト
                     <br />
                     <span className="text-yellow-500">テキストテキスト</span>
-                    テキストテキストテキスト
+                    テキストテキストテキストテキスト
                   </h1>
                 </SlideInLeft>
               </div>
