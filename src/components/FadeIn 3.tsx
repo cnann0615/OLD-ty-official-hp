@@ -28,7 +28,7 @@ export const TimeFadeIn = ({ children, delay }: { children: React.ReactNode, del
 export const FadeIn = ({ children }: any) => {
     const { ref, inView } = useInView({
         // オプション
-        rootMargin: '-5px', // ref要素が現れてから5px過ぎたら
+        rootMargin: '-10px', // ref要素が現れてから50px過ぎたら
         triggerOnce: true, // 最初の一度だけ実行
     });
 

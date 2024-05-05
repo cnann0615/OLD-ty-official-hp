@@ -21,9 +21,9 @@ export default function blog ({ blog }: any) {
   return (
     <Layout>
       <div className="container mx-auto p-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {blog.map((blog: any) => (
-            <article key={blog.id} className="bg-yellow-300 text-black shadow-lg rounded-lg overflow-hidden h-auto">
+            <article key={blog.id} className="bg-yellow-300 text-black shadow-lg rounded-lg overflow-hidden h-auto border-4 border-black">
               <Link href={`blog/${blog.id}`}>
                 <div className="relative">
                   <img src={blog.photo.url} alt={blog.title} className="w-full h-64 object-cover"/>
