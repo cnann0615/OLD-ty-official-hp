@@ -28,7 +28,7 @@ export default function BlogId({ blog }: any) {
       <main className="bg-white shadow-md rounded-lg mx-auto my-8 p-6 max-w-4xl">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{blog.title}</h1>
         <p className="text-gray-500 text-sm mb-4">{blog.date}</p>
-        <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: blog.body }}></div>
+        <div className="text-black prose max-w-none" dangerouslySetInnerHTML={{ __html: blog.body }}></div>
       </main>
     </Layout>
   );
