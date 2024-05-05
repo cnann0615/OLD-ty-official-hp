@@ -53,7 +53,7 @@ export default function Home({ blog }: any) {
         <div className="relative w-full justify-center items-center mb-6">
           <FadeIn>
             <Image
-              src="/images/top/img0.jpeg"
+              src="/images/top/img6.jpeg"
               alt="Athlete"
               layout="responsive"
               width={500}
