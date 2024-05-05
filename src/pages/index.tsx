@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
   };
 };
 
-// 日付をフォーマットするヘルパー関数
+// 日付をフォーマットする関数
 export const formatDate = (dateString: string) => {
   return new Intl.DateTimeFormat("ja-JP", {
     year: "numeric",
