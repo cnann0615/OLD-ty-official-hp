@@ -57,7 +57,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <main className="bg-yellow-300 shadow-md rounded-lg mx-auto my-8 p-6 max-w-4xl border-4 border-black ">
+      <main className="bg-yellow-500 shadow-md rounded-lg mx-auto my-8 p-6 max-w-4xl border-4 border-black ">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">お問い合わせ</h1>
         <form onSubmit={handleSubmit} noValidate>
           <div className="mb-4">
@@ -71,7 +71,7 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
-              className={`mt-1 block w-80 h-10 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
+              className={`mt-1 block w-80 h-10 rounded-md bg-gray-200 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
                 errors.name && "border-red-500"
               }`}
               value={formData.name}
@@ -92,7 +92,7 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
-              className={`mt-1 block w-96 h-10 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
+              className={`mt-1 block w-96 h-10 rounded-md bg-gray-200 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
                 errors.email && "border-red-500"
               }`}
               value={formData.email}
@@ -113,7 +113,7 @@ export default function Contact() {
               id="message"
               name="message"
               rows={14}
-              className={`mt-1 block w-full h-96 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
+              className={`mt-1 block w-full h-96 rounded-md bg-gray-200 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ${
                 errors.message && "border-red-500"
               }`}
               value={formData.message}

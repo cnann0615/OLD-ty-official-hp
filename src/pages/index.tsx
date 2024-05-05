@@ -53,7 +53,7 @@ export default function Home({ blog }: any) {
         <div className="relative w-full justify-center items-center mb-6">
           <FadeIn>
             <Image
-              src="/images/top/img6.jpeg"
+              src="/images/top/img0.jpeg"
               alt="Athlete"
               layout="responsive"
               width={500}
@@ -78,36 +78,55 @@ export default function Home({ blog }: any) {
         {/* 紹介 */}
         <div className=" text-gray-100 font-bold">
           <FadeIn>
-            <h1 className=" my-32 text-center text-6xl text-white font-bold">
+            <h1 className=" mt-32 mb-52 text-center text-6xl text-white font-bold">
               ”人はいつからでも、何にでもなれる。”
             </h1>
           </FadeIn>
 
           <div>
-            <div className="flex flex-col md:flex-row mb-28 gap-7">
-              <div className="w-full md:w-1/2">
-                <FadeIn>
-                  <Image
-                    src="/images/top/img1.jpeg"
-                    alt="Athlete"
-                    layout="responsive"
-                    width={250}
-                    height={120}
-                    className="rounded-xl border-4 border-black"
-                  ></Image>
-                </FadeIn>
+            <div className="flex flex-col md:flex-row mb-16 gap-7">
+              <div className="w-full md:w-1/2 h-[570px] relative">
+                {/* <FadeIn> */}
+                <Image
+                  src="/images/top/img7.jpeg"
+                  alt="Athlete"
+                  width={400}
+                  height={300}
+                  className="rounded-xl border-4 border-black absolute transform rotate-12"
+                  style={{ top: "10%", left: "10%" }}
+                ></Image>
+                <Image
+                  src="/images/top/img8.jpeg"
+                  alt="Athlete"
+                  width={400}
+                  height={300}
+                  className="rounded-xl border-4 border-black absolute transform -rotate-12"
+                  style={{ bottom: "10%", right: "10%" }}
+                ></Image>
+                {/* </FadeIn> */}
               </div>
+
               <div className="w-full md:w-1/2 pl-4 flex items-center">
                 <SlideInLeft>
-                  <h1 className="text-4xl md:text-6xl leading-snug md:leading-normal">
-                    2028年<br /><span className="text-yellow-500">LAオリンピック</span>を
-                    <br />
-                    目指して、カナダ挑戦中。
-                  </h1>
+                  <div>
+                    <Link
+                      href="/profile"
+                      className=" ml-96 rounded-lg py-2 px-4 text-2xl font-bold bg-black hover:bg-yellow-500 hover:text-black"
+                    >
+                      View More　　→
+                    </Link>
+                    <h1 className="text-4xl md:text-6xl leading-snug md:leading-normal">
+                      2028年
+                      <br />
+                      <span className="text-yellow-500">LAオリンピック</span>を
+                      <br />
+                      目指して、カナダ挑戦中。
+                    </h1>
+                  </div>
                 </SlideInLeft>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mb-28 gap-7">
+            <div className="flex flex-col md:flex-row mb-16 gap-7">
               <div className="w-full md:w-1/2 pl-4 flex items-center">
                 <SlideInRight>
                   <h1 className="text-4xl md:text-6xl leading-snug md:leading-normal">
@@ -122,30 +141,30 @@ export default function Home({ blog }: any) {
                 </SlideInRight>
               </div>
               <div className="w-full md:w-1/2">
-                <FadeIn>
-                  <Image
-                    src="/images/top/img2.jpeg"
-                    alt="Athlete"
-                    layout="responsive"
-                    width={250}
-                    height={120}
-                    className="rounded-xl border-4 border-black"
-                  ></Image>
-                </FadeIn>
+                {/* <FadeIn> */}
+                <Image
+                  src="/images/top/img2.jpeg"
+                  alt="Athlete"
+                  layout="responsive"
+                  width={250}
+                  height={120}
+                  className="rounded-xl border-4 border-black"
+                ></Image>
+                {/* </FadeIn> */}
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mb-28 gap-7">
+            <div className="flex flex-col md:flex-row mb-20 gap-7">
               <div className="w-full md:w-1/2">
-                <FadeIn>
-                  <Image
-                    src="/images/top/img3.jpeg"
-                    alt="Athlete"
-                    layout="responsive"
-                    width={250}
-                    height={120}
-                    className="rounded-xl border-4 border-black"
-                  ></Image>
-                </FadeIn>
+                {/* <FadeIn> */}
+                <Image
+                  src="/images/top/img3.jpeg"
+                  alt="Athlete"
+                  layout="responsive"
+                  width={250}
+                  height={120}
+                  className="rounded-xl border-4 border-black"
+                ></Image>
+                {/* </FadeIn> */}
               </div>
               <div className="w-full md:w-1/2 pl-4 flex items-center">
                 <SlideInLeft>
@@ -164,22 +183,25 @@ export default function Home({ blog }: any) {
         {/* ブログとX */}
         <div className="my-10 flex flex-col md:flex-row justify-center items-start gap-4">
           <div className="w-full p-4">
-            <SlideInLeft>
-              <div className="flex gap-10  mb-6 ">
-              <h3 className="text-4xl text-white font-bold underline underline-offset-8 decoration-yellow-500 decoration-8">
-                Recent Blog Posts
-              </h3>
-              <Link href="/blog" className="rounded-lg py-2 px-4 text-2xl font-bold bg-black hover:bg-yellow-500 hover:text-black">
-                View More　　→
-              </Link>
-              </div>
-            </SlideInLeft>
             <FadeIn>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {blog.slice(0, 8).map((blog: any) => (
+              <div className="flex gap-10 mb-10 ">
+                <h3 className="text-4xl text-white font-bold underline underline-offset-8 decoration-yellow-500 decoration-8">
+                  Recent Blog Posts
+                </h3>
+                <Link
+                  href="/blog"
+                  className="rounded-lg py-2 px-4 text-2xl font-bold bg-black hover:bg-yellow-500 hover:text-black"
+                >
+                  View More　　→
+                </Link>
+              </div>
+            </FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {blog.slice(0, 8).map((blog: any) => (
+                <SlideInRight>
                   <article
                     key={blog.id}
-                    className=" bg-yellow-300 text-black shadow-lg rounded-lg overflow-hidden h-auto border-4 border-black"
+                    className=" bg-yellow-300 text-black shadow-lg rounded-lg overflow-hidden h-auto border-4 border-black hover:border-yellow-500"
                   >
                     <Link href={`blog/${blog.id}`}>
                       <div className="relative">
@@ -189,7 +211,7 @@ export default function Home({ blog }: any) {
                           className="w-full h-64 object-cover"
                         />
                         <div className="p-6">
-                          <h3 className="text-xl font-semibold">
+                          <h3 className="text-xl font-semibold h-24">
                             {blog.title}
                           </h3>
                           <p className="text-sm text-gray-600">
@@ -199,9 +221,9 @@ export default function Home({ blog }: any) {
                       </div>
                     </Link>
                   </article>
-                ))}
-              </div>
-            </FadeIn>
+                </SlideInRight>
+              ))}
+            </div>
           </div>
         </div>
         {/* <div className="w-full md:w-1/2 p-4">
