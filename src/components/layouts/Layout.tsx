@@ -68,11 +68,11 @@ export default function Layout({ children }: LayoutProps) {
         </header>
         {children}
         {/* Footer */}
-        <footer className="p-5 bg-violet-900 text-white">
+        <footer className=" px-36 py-6 bg-violet-900 text-white">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <h3 className="text-lg">MENU</h3>
+                <h3 className="text-xl underline decoration-yellow-500">Menu</h3>
                 <li>
                   <Link href="/" className="inline hover:text-violet-300">
                     Top
@@ -95,7 +95,7 @@ export default function Layout({ children }: LayoutProps) {
                 </li>
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg">FOLLOW US</h3>
+                <h3 className="text-xl underline decoration-yellow-500">Follow Me!!</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://www.instagram.com/hamiltonsrbbengals?igsh=MTI5ZXJiZXZtOXM1ZA=="
@@ -119,7 +119,7 @@ export default function Layout({ children }: LayoutProps) {
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg">CONTACT INFO</h3>
+                <h3 className="text-xl underline decoration-yellow-500">Contact Info</h3>
                 <p>Email: contact@example.com</p>
                 <p>Phone: (123) 456-7890</p>
               </div>
